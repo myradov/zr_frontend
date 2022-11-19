@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer>
-        <ul>
+    <footer className='absolute bottom-0 bg-main'>
+        <ul className='flex'>
             <li>
                 <Link href="/">
                     Home
