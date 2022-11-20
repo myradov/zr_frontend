@@ -23,9 +23,8 @@ export default function Home() {
         <meta name="description" content="Zerur Electronics - Home Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className='relative w-full h-auto pt-20'>
+      <section className='relative w-full h-auto py-2 px-6'>
         <Swiper
-          // install Swiper modules
           modules={[EffectFade, Autoplay, Navigation, Pagination]}
           spaceBetween={30}
           loop={true}
@@ -42,22 +41,22 @@ export default function Home() {
           onSlideChange={() => console.log('slide change')}
         >
           <SwiperSlide>
-            <div className='block w-full h-60 md:h-96 '>
+            <div className='block w-full h-52 md:h-96 '>
               <Image src="/elec_1.jpg" layout="fill" objectFit="cover"/>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='block w-full h-60 md:h-96 '>
+            <div className='block w-full h-52 md:h-96 '>
               <Image src="/elec_2.jpg" layout="fill" objectFit="cover"/>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='block w-full h-60 md:h-96 '>
+            <div className='block w-full h-52 md:h-96 '>
               <Image src="/elec_3.jpg" layout="fill" objectFit="cover"/>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className='block w-full h-60 md:h-96 '>
+            <div className='block w-full h-52 md:h-96 '>
               <Image src="/elec_4.jpg" layout="fill" objectFit="cover"/>
             </div>
           </SwiperSlide>
