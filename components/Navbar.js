@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { MdMenu } from "react-icons/md";
+import Dropdown from './Dropdown.js';
 
 
 const Navbar = () => {
@@ -18,9 +19,7 @@ const Navbar = () => {
                 <Link href="/products" className='text-gray-500 border-b border-gray-200 bg-white hover:border-gray-400 hover:text-main p-5 transition-all duraiton-450 ease'>
                     <li>Products</li>
                 </Link>
-                <Link href="/categories" className='text-gray-500 border-b border-gray-200 bg-white hover:border-gray-400 hover:text-main p-5 transition-all duraiton-450 ease'>
-                    <li>Categories</li>
-                </Link>
+                <Dropdown />
                 <Link href="/brands" className='text-gray-500 border-b border-gray-200 bg-white hover:border-gray-400 hover:text-main p-5 transition-all duraiton-450 ease'>
                     <li>Brands</li>
                 </Link>

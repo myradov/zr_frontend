@@ -33,7 +33,7 @@ export default function Home() {
         <meta name="description" content="Zerur Electronics - Home Page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <section className='relative w-full h-auto mx-auto bg-green-200'>
+      <section className='relative w-full h-auto mx-auto bg-white'>
         <Swiper
           modules={[EffectFade, Autoplay, Navigation, Pagination]}
           spaceBetween={30}
@@ -73,23 +73,106 @@ export default function Home() {
         </Swiper>
       </section>
      
-      <main className='relative w-full h-auto flex flex-col justify-center items-center mx-auto'>
-        <section className='bg-gray-100 container p-2 max-w-screen-xl mx-auto'>
+      <main className='relative w-full h-auto flex flex-col justify-center items-center mx-auto divide-y'>
+        <section className='bg-gray-50 container p-2 max-w-screen-xl mx-auto'>
           {/* Products  */} 
           <h2 className='relative py-5 text-2xl font-bold'>Categories</h2>
-          <ul className='relative container mx-auto grid grid-cols-2 md:grid-cols-4 gap-1 p-1'>
+          <div className='relative w-full h-auto mx-auto'>
+              <Swiper
+                modules={[EffectFade, Autoplay, Navigation, Pagination]}
+                className="mySwiper "
+                spaceBetween={30}
+                // loop={true}
+                // effect={"fade"}
+                slidesPerView={2.5}
+                breakpoints={{
+                  370: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 10,
+                  },
+                  645: {
+                    slidesPerView: 4.5,
+                    spaceBetween: 10,
+                  },
+                  768: {
+                    slidesPerView: 6.5,
+                    spaceBetween: 10,
+                  },
+                  1024: {
+                    slidesPerView: 8,
+                    spaceBetween: 10,
+                  },
+                }}
+                navigation={true}
+                pagination={{ clickable: true }}
+                scrollbar={{ draggable: true }}
+                onSwiper={(swiper) => console.log(swiper)}
+                // onSlideChange={() => console.log('slide change')}
+              >
+                <SwiperSlide>
+                  <Link href="#" className='relative w-42 h-10 md:h-16'>
+                    <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
+                        <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
+                    </li>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Link href="#" className='relative w-42 h-10 md:h-16'>
+                    <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
+                        <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
+                    </li>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Link href="#" className='relative w-42 h-10 md:h-16'>
+                    <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
+                        <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
+                    </li>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Link href="#" className='relative w-42 h-10 md:h-16'>
+                    <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
+                        <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
+                    </li>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Link href="#" className='relative w-42 h-10 md:h-16'>
+                    <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
+                        <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
+                    </li>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Link href="#" className='relative w-42 h-10 md:h-16'>
+                    <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
+                        <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
+                    </li>
+                  </Link>
+                </SwiperSlide>
+                <SwiperSlide>
+                  <Link href="#" className='relative w-42 h-10 md:h-16'>
+                    <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
+                        <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
+                    </li>
+                  </Link>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          {/* <ul className='relative container mx-auto grid grid-cols-2 md:grid-cols-4 gap-1 p-1'>
             <Tags title="Computers & Laptops"/>
             <Tags title="Phones & Tablets"/>
             <Tags title="Electronics"/>
             <Tags title="Chargers"/>
             <Tags title="Appliances"/>
-          </ul>
+          </ul> */}
         </section>
-        <section className='bg-gray-100 container p-2 max-w-screen-xl mx-auto grid grid-cols-2 gap-4'>
+        <section className='container p-2 max-w-screen-xl mx-auto grid grid-cols-2 gap-4'>
           <Banner />
           <Banner />
         </section>
-        <section className='bg-gray-100 container p-2 max-w-screen-xl mx-auto'>
+        <section className='container p-2 max-w-screen-xl mx-auto'>
           {/* Products  */} 
           <h2 className='relative py-5 text-2xl font-bold'>Products</h2>
           <ul className='relative grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4'>

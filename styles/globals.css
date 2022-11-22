@@ -30,3 +30,22 @@ a {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-button-next, .swiper-button-prev {
+  color: rgb(170, 170, 170) !important;
+}
+.swiper-pagination-bullet-active {
+  background: #790013 !important;
+}
+@media (max-width: 500px) {
+  .swiper-button-next, .swiper-button-prev{
+    display: none !important;
+  }
+}
+
+.mySwiper .swiper-pagination-bullet, .swiper-pagination-bullet-active {
+  display: none;
+}
+.mySwiper .swiper-button-next, .swiper-button-prev {
+  width: 22px !important;
+}
