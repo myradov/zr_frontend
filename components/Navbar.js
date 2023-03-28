@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className='w-full relative z-40'>
         <nav className='flex justify-between items-center bg-white text-black w-full h-12 md:h-16 p-4 border-b border-gray-200'>
             <Link href="/" className='flex justify-center items-center w-12 md:w-16 h-auto'>
-                <Image src="/zerur_logo.png" width={400} height={360} className="w-full h-auto"/>
+                <Image src="/zerur_logo.png" alt="zerur logo" width={400} height={360} className="w-full h-auto"/>
             </Link>
             <ul className='hidden md:flex w-2/4 justify-evenly items-center'>
                 <Link href="/" className='text-gray-500 border-b border-gray-200 bg-white hover:border-gray-400 hover:text-main p-5 transition-all duraiton-450 ease'>

@@ -5,6 +5,7 @@ import Link from 'next/link';
 // Components
 import { Tags } from '../components/Tags'
 import { Product } from '../components/Product';
+import { Category } from '../components/Category';
 
 // Images
 import cat1 from '../public/z_cat1.jpg'
@@ -25,7 +26,7 @@ import { Banner } from '../components/Banner';
 
 
 
-export default function Home() {
+export default function Home({products, categories}) {
   return (
     <div className='relative w-full h-auto mx-auto p-1'>
       <Head>
@@ -109,7 +110,12 @@ export default function Home() {
                 onSwiper={(swiper) => console.log(swiper)}
                 // onSlideChange={() => console.log('slide change')}
               >
-                <SwiperSlide>
+                {
+                  categories.data.map(category => (
+                    <Category category={category} key={category.id}/>
+                  ))
+                }
+                {/* <SwiperSlide>
                   <Link href="#" className='relative w-42 h-10 md:h-16'>
                     <li className='relative w-full h-full flex items-center flex-nowrap rounded-lg overflow-hidden bg-gray-200 hover:bg-white transition delay-50 duration-200 ease-in' >
                         <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
@@ -157,7 +163,7 @@ export default function Home() {
                         <p className='relative w-full text-center text-xs md:text-base font-bold p-2'>Electronics</p>
                     </li>
                   </Link>
-                </SwiperSlide>
+                </SwiperSlide> */}
               </Swiper>
             </div>
           {/* <ul className='relative container mx-auto grid grid-cols-2 md:grid-cols-4 gap-1 p-1'>
@@ -176,6 +182,12 @@ export default function Home() {
           {/* Products  */} 
           <h2 className='relative py-5 text-2xl font-bold'>Products</h2>
           <ul className='relative grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4'>
+            {
+              products.data.map(product => (
+                <Product product={product} key={product.key}/> 
+              ))
+            }
+            {/* <Product />
             <Product />
             <Product />
             <Product />
@@ -183,11 +195,36 @@ export default function Home() {
             <Product />
             <Product />
             <Product />
-            <Product />
-            <Product />
+            <Product /> */}
           </ul>
         </section>
       </main>
     </div>
   )
+}
+
+export async function getStaticProps(){
+  const resP = await fetch('http://localhost:8055/items/product?fields=id,banner.*,translations.*,old_price');
+  const products = await resP.json()
+
+  if(!products){
+    return { 
+      notFound: true
+    }
+  }
+
+  const resC = await fetch('http://localhost:8055/items/category?fields=id,banner,translations.*,subcategory.*');
+  const categories = await resC.json()
+
+  if(!products){
+    return { 
+      notFound: true
+    }
+  }
+  return {
+    props: {
+      products,
+      categories
+    }
+  }
 }
